@@ -1,0 +1,43 @@
+---
+import { languages } from '../i18n/ui';
+import {
+    getLangFromUrl,
+    useTranslations,
+    useTranslatedPath,
+} from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+---
+<div class="language-selector">
+  {Object.entries(languages).map(([lang, label]) => (
+    <button class="language-button" onclick={`window.location.href='/${lang}/'`}>
+      {label}
+    </button>
+  ))}
+</div>
+
+<style scoped>
+  .language-selector {
+    display: flex;
+    gap: 10px;
+  }
+
+  .language-button {
+    background-color: transparent;
+    border: 2px solid #333;
+    color: #333;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .language-button:hover {
+    background-color: #333;
+    color: #fff;
+  }
+</style>

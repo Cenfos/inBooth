@@ -1,0 +1,134 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import LanguagePicker from "./LanguagePicker.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<header>
+  <div class="logo">
+    <span>IP</span>
+  </div>
+  <button class="menu-toggle" aria-label="Toggle menu">
+    &#9776;
+  </button>
+  <nav>
+    <ul class="nav-links">
+      <li><a href={lang === 'en' ? '/en' : '/'}>{t('nav.home')}</a></li>
+      <li><a href={lang === 'en' ? '/en/traduccion' : '/es/traduccion'}>{t('nav.traduccion')}</a></li>
+      <li><a href={lang === 'en' ? '/en/interpretacion' : '/es/interpretacion'}>{t('nav.interpretacion')}</a></li>
+      <li><a href={lang === 'en' ? '/en/contacto' : '/es/contacto'}>{t('nav.contacto')}</a></li>
+    </ul>
+  </nav>
+  <LanguagePicker />
+</header>
+
+<style scoped>
+  header {
+    background-color: #fff;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo img {
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
+  }
+
+  .logo span {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+  }
+
+  .menu-toggle {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    order: 3;
+  }
+
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin-right: 20px;
+  }
+
+  nav ul li:last-child {
+    margin-right: 0;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  nav ul li a:hover {
+    color: #1368ea;
+  }
+
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+
+    nav ul {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 15px 0;
+    }
+
+    nav ul.show-menu {
+      display: flex;
+    }
+
+    nav ul li {
+      margin: 10px 0;
+      text-align: center;
+    }
+
+    nav ul li a {
+      font-size: 18px;
+    }
+  }
+</style>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (menuToggle && navLinks) {
+      menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('show-menu');
+      });
+    }
+  });
+</script>

@@ -1,0 +1,75 @@
+---
+interface Props {
+	title: string;
+	body: string;
+	href: string;
+}
+
+const { href, title, body } = Astro.props;
+---
+
+<li class="link-card">
+    <a href={href}>
+        <h2>
+            {title}
+            <span>&rarr;</span>
+        </h2>
+        <p>
+            {body}
+        </p>
+    </a>
+</li>
+
+<style>
+  :root {
+    --accent: #007aff; /* Azul de Apple */
+    --card-bg: #ffffff; /* Fondo blanco para las tarjetas */
+    --card-bg-hover: #f0f0f5; /* Fondo al pasar el mouse */
+    --shadow-light: rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    --shadow-dark: rgba(0, 0, 0, 0.2); /* Sombra más oscura para hover */
+    --text-color: #333333; /* Texto oscuro */
+  }
+
+  .link-card {
+    
+    display: flex;
+    padding: 40px;
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px var(--shadow-light);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 300px; /* Ajusta el ancho máximo */
+    margin:10px auto; /* Centra las tarjetas */
+  }
+
+  .link-card > a {
+    text-decoration: none;
+    line-height: 1.5;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+
+  p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+  }
+
+  .link-card:hover {
+    background-color: var(--card-bg-hover);
+    box-shadow: 0 8px 16px var(--shadow-dark);
+  }
+
+  .link-card:hover h2 {
+    color: var(--accent);
+  }
+</style>

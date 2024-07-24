@@ -1,0 +1,96 @@
+---
+// No es necesario importar nada aquí si solo estás manejando estilos y lógica local.
+---
+
+<footer>
+    <div class="footer-content">
+      <p>&copy; {new Date().getFullYear()} InterpreterStrike. Todos los derechos reservados.</p>
+      <div class="cookie-notice" id="cookie-notice">
+        <p>Usamos cookies para mejorar su experiencia en nuestro sitio web. Al continuar navegando, acepta el uso de cookies.</p>
+        <div class="cookie-buttons">
+          <button id="accept-cookies" class="cookie-button">Aceptar</button>
+          <button id="deny-cookies" class="cookie-button">Denegar</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <style>
+    footer {
+    background-color: #f8f9fa;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    color: #333;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .cookie-notice {
+    background-color: #ffffff;
+    color: #333;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .cookie-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  .cookie-button {
+    background-color: rgb(var(--accent));
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+  }
+  .cookie-button:hover {
+    background-color: rgb(var(--accent-dark));
+  }
+  </style>
+  
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+      const cookieNotice = document.getElementById('cookie-notice');
+      const acceptCookiesButton = document.getElementById('accept-cookies');
+      const denyCookiesButton = document.getElementById('deny-cookies');
+  
+      // Verificar si el usuario ya ha aceptado o denegado cookies
+      const cookiesAccepted = localStorage.getItem('cookies-accepted');
+      if (cookiesAccepted) {
+        cookieNotice.style.display = 'none';
+      } else {
+        cookieNotice.style.display = 'flex';
+      }
+  
+      acceptCookiesButton.addEventListener('click', () => {
+        localStorage.setItem('cookies-accepted', 'true');
+        cookieNotice.style.display = 'none';
+      });
+  
+      denyCookiesButton.addEventListener('click', () => {
+        localStorage.setItem('cookies-accepted', 'false');
+        cookieNotice.style.display = 'none';
+      });
+    });
+  </script>
+  

@@ -1,11 +1,113 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import Card from '../../components/Card.astro';
 ---
 
 <Layout title="InterpreterStrike">
-	<main>
-        <h1>Contact</h1>
-        
-    </main>
+  <main>
+    <div class="content">
+      <h1>Contacto</h1>
+      <form id="contact-form" action="/send-form" method="POST">
+        <div class="form-group">
+          <label for="nombre">Name <span class="required">*</span></label>
+          <input type="text" id="nombre" name="nombre" required>
+        </div>
+        <div class="form-group">
+          <label for="apellidos">Last Name</label>
+          <input type="text" id="apellidos" name="apellidos">
+        </div>
+        <div class="form-group">
+          <label for="razon-social">Business Name</label>
+          <input type="text" id="razon-social" name="razon-social">
+        </div>
+        <div class="form-group">
+          <label for="telefono">Telephone</label>
+          <input type="tel" id="telefono" name="telefono">
+        </div>
+        <div class="form-group">
+          <label for="email">Email <span class="required">*</span></label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="observaciones">Comments</label>
+          <textarea id="observaciones" name="observaciones" maxlength="300"></textarea>
+          <small>Maximum 300 characters.</small>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </main>
 </Layout>
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+    background-color: #f9f9f9;
+  }
+  h1, h2, h3 {
+    color: #c14747;
+  }
+  .content {
+    max-width: 800px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  .form-group .required {
+    color: #c14747;
+  }
+  button {
+    background-color: #c14747;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  button:hover {
+    background-color: #a83a3a;
+  }
+  small {
+    display: block;
+    margin-top: 0.5rem;
+    color: #666;
+  }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const contactForm = document.getElementById('contact-form');
+      contactForm.addEventListener('submit', function (event) {
+        const nombre = document.getElementById('nombre').value.trim();
+        const email = document.getElementById('email').value.trim();
+        
+        if (!nombre || !email) {
+          event.preventDefault();
+          alert('Por favor, complete los campos obligatorios.');
+        }
+      });
+    });
+

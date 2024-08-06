@@ -8,28 +8,29 @@ import Card from '../components/Card.astro';
 		
 		<h1>Bienvenido a InterpreterStrike!</h1>
 		<p class="instructions">
-			Interpreterstrike en Español!!!!
+			Bienvenido a InterpreterStrike, tu socio de confianza para servicios de interpretación y traducción profesional. Ofrecemos soluciones lingüísticas precisas y eficientes para todas tus necesidades comunicativas.
+
 		</p>
 		<ul role="list" class="link-card-grid">
 			<Card
 				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
+				title="Servicios de Interpretación en Tiempo Real"
+				body="Brindamos interpretación simultánea y consecutiva para conferencias, reuniones y eventos, asegurando una comunicación fluida y precisa en cualquier idioma."
 			/>
 			<Card
 				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
+				title="Traducciones Técnicas y Especializadas"
+				body="Nuestro equipo de expertos traductores maneja documentos técnicos, legales y médicos con la máxima precisión y confidencialidad."
 			/>
 			<Card
 				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
+				title="Asesoramiento Lingüístico Personalizado"
+				body="Ofrecemos consultoría lingüística para ayudarte a desarrollar estrategias de comunicación efectivas y adaptadas a tus necesidades específicas."
 			/>
 			<Card
 				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
+				title="Formación y Talleres de Idiomas"
+				body="Mejora tus habilidades lingüísticas con nuestros cursos y talleres personalizados, diseñados para profesionales y empresas que buscan dominar nuevos idiomas."
 			/>
 		</ul>
 	</main>
@@ -41,18 +42,32 @@ import Card from '../components/Card.astro';
 		padding: 1rem;
 		width: 800px;
 		max-width: calc(100% - 2rem);
-		color: white;
+		color: #000000;
 		font-size: 20px;
 		line-height: 1.6;
 	}
 	
-	h1 {
-		font-size: 4rem;
-		font-weight: 700;
-		line-height: 1;
-		text-align: center;
-		margin-bottom: 1em;
-	}
+	body {
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+                margin: 0;
+                padding: 20px;
+                color: #333;
+                background-color: #f9f9f9;
+            }
+            h1, h2, h3 {
+                color: #c14747;
+            }
+            .content {
+                max-width: 800px;
+                margin: auto;
+            }
+            .section {
+                margin-bottom: 2rem;
+            }
+            ul {
+                padding-left: 20px;
+            }
 	.text-gradient {
 		background-image: var(--accent-gradient);		
 		-webkit-text-fill-color: transparent;

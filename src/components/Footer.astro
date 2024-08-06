@@ -1,26 +1,66 @@
 ---
-// No es necesario importar nada aquí si solo estás manejando estilos y lógica local.
+import LanguagePicker from "./LanguagePicker.astro";
+
+const { lang } = Astro.props;
+
+// Traducciones para el footer
+const translations = {
+  es: {
+    contact: {
+      title: "Información de contacto",
+      email: "Correo electrónico: info@interpreterstrike.com",
+      phone: "Teléfono: +123 456 7890",
+      address: "Dirección: Interpretation Street, 123, Ciudad, País",
+    },
+    cookies: "Usamos cookies para mejorar su experiencia en nuestro sitio web. Al continuar navegando, acepta el uso de cookies.",
+    accept: "Aceptar",
+    deny: "Denegar",
+    copyright: "Todos los derechos reservados.",
+  },
+  en: {
+    contact: {
+      title: "Contact Information",
+      email: "Email: info@interpreterstrike.com",
+      phone: "Phone: +123 456 7890",
+      address: "Address: Interpretation Street, 123, City, Country",
+    },
+    cookies: "We use cookies to improve your experience on our site. By continuing to browse, you accept the use of cookies.",
+    accept: "Accept",
+    deny: "Deny",
+    copyright: "All rights reserved.",
+  },
+};
+
+// Seleccionar el conjunto de traducciones basado en el idioma actual
+const t = translations[lang] || translations.es;
 ---
 
 <footer>
-    <div class="footer-content">
-      <p>&copy; {new Date().getFullYear()} InterpreterStrike. Todos los derechos reservados.</p>
-      <div class="cookie-notice" id="cookie-notice">
-        <p>Usamos cookies para mejorar su experiencia en nuestro sitio web. Al continuar navegando, acepta el uso de cookies.</p>
-        <div class="cookie-buttons">
-          <button id="accept-cookies" class="cookie-button">Aceptar</button>
-          <button id="deny-cookies" class="cookie-button">Denegar</button>
-        </div>
+  <div class="footer-content">
+    <div class="contact-info">
+      <h3>{t.contact.title}</h3>
+      <p>{t.contact.email}</p>
+      <p>{t.contact.phone}</p>
+      <p>{t.contact.address}</p>
+    </div>
+    <p>&copy; {new Date().getFullYear()} InterpreterStrike. {t.copyright}</p>
+    <div class="cookie-notice" id="cookie-notice">
+      <p>{t.cookies}</p>
+      <div class="cookie-buttons">
+        <button id="accept-cookies" class="cookie-button">{t.accept}</button>
+        <button id="deny-cookies" class="cookie-button">{t.deny}</button>
       </div>
     </div>
-  </footer>
-  
-  <style>
-    footer {
+  </div>
+  <LanguagePicker />
+</footer>
+
+<style>
+  footer {
     background-color: #f8f9fa;
     padding: 20px 30px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
     font-size: 14px;
@@ -32,6 +72,9 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+  }
+  .contact-info {
+    margin-bottom: 1rem;
   }
   .cookie-notice {
     background-color: #ffffff;
@@ -66,31 +109,30 @@
   .cookie-button:hover {
     background-color: rgb(var(--accent-dark));
   }
-  </style>
-  
-  <script is:inline>
-    document.addEventListener('DOMContentLoaded', () => {
-      const cookieNotice = document.getElementById('cookie-notice');
-      const acceptCookiesButton = document.getElementById('accept-cookies');
-      const denyCookiesButton = document.getElementById('deny-cookies');
-  
-      // Verificar si el usuario ya ha aceptado o denegado cookies
-      const cookiesAccepted = localStorage.getItem('cookies-accepted');
-      if (cookiesAccepted) {
-        cookieNotice.style.display = 'none';
-      } else {
-        cookieNotice.style.display = 'flex';
-      }
-  
-      acceptCookiesButton.addEventListener('click', () => {
-        localStorage.setItem('cookies-accepted', 'true');
-        cookieNotice.style.display = 'none';
-      });
-  
-      denyCookiesButton.addEventListener('click', () => {
-        localStorage.setItem('cookies-accepted', 'false');
-        cookieNotice.style.display = 'none';
-      });
+</style>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const cookieNotice = document.getElementById('cookie-notice');
+    const acceptCookiesButton = document.getElementById('accept-cookies');
+    const denyCookiesButton = document.getElementById('deny-cookies');
+
+    // Verificar si el usuario ya ha aceptado o denegado cookies
+    const cookiesAccepted = localStorage.getItem('cookies-accepted');
+    if (cookiesAccepted) {
+      cookieNotice.style.display = 'none';
+    } else {
+      cookieNotice.style.display = 'flex';
+    }
+
+    acceptCookiesButton.addEventListener('click', () => {
+      localStorage.setItem('cookies-accepted', 'true');
+      cookieNotice.style.display = 'none';
     });
-  </script>
-  
+
+    denyCookiesButton.addEventListener('click', () => {
+      localStorage.setItem('cookies-accepted', 'false');
+      cookieNotice.style.display = 'none';
+    });
+  });
+</script>

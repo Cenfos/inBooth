@@ -31,7 +31,6 @@ const { href, title, body } = Astro.props;
   }
 
   .link-card {
-    
     display: flex;
     padding: 40px;
     background-color: var(--card-bg);
@@ -40,7 +39,7 @@ const { href, title, body } = Astro.props;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
     width: 100%;
     max-width: 300px; /* Ajusta el ancho máximo */
-    margin:10px auto; /* Centra las tarjetas */
+    margin: 10px auto; /* Centra las tarjetas */
   }
 
   .link-card > a {
@@ -71,5 +70,11 @@ const { href, title, body } = Astro.props;
 
   .link-card:hover h2 {
     color: var(--accent);
+  }
+
+  @media (max-width: 600px) {
+    .link-card {
+      margin: 10px 20px; /* Añadir margen en los lados para pantallas pequeñas */
+    }
   }
 </style>

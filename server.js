@@ -1,10 +1,9 @@
 import express from 'express';
-import pool from './db.js'; // Asegúrate de importar el pool de conexiones
+import pool from './db.js'; // Asegúrate de importar la conexión a la base de datos
 
 const app = express();
 const PORT = 3001;
 
-// Middleware para parsear el cuerpo de las solicitudes POST
 app.use(express.urlencoded({ extended: true }));
 
 // Ruta para la página de inicio
@@ -22,10 +21,22 @@ app.post('/send-form', async (req, res) => {
       [nombre, apellidos, razonSocial, telefono, email, observaciones]);
     conn.release();
 
-    res.send('Formulario enviado exitosamente');
+    res.send(`
+      <div>
+        <p>Formulario enviado exitosamente</p>
+        <button onclick="window.location.href='/contacto'">Volver al formulario</button>
+        <button onclick="window.location.href='/'">Volver al inicio</button>
+      </div>
+    `);
   } catch (err) {
     console.error(err);
-    res.status(500).send('Error al enviar el formulario');
+    res.status(500).send(`
+      <div>
+        <p>Error al enviar el formulario</p>
+        <button onclick="window.location.href='/contacto'">Volver al formulario</button>
+        <button onclick="window.location.href='/'">Volver al inicio</button>
+      </div>
+    `);
   }
 });
 

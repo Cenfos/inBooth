@@ -54,10 +54,8 @@ const {
   <button type="submit">{submitButtonText}</button>
 </form>
 
-
-
 <style>
-   body {
+  body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
@@ -116,17 +114,17 @@ const {
   }
 </style>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const contactForm = document.getElementById('contact-form');
-      contactForm.addEventListener('submit', function (event) {
-        const nombre = document.getElementById('nombre').value.trim();
-        const email = document.getElementById('email').value.trim();
-        
-        if (!nombre || !email) {
-          event.preventDefault();
-          alert('{requiredText}');
-        }
-      });
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contact-form');
+    contactForm.addEventListener('submit', function (event) {
+      const nombre = document.getElementById('nombre').value.trim();
+      const email = document.getElementById('email').value.trim();
+      
+      if (!nombre || !email) {
+        event.preventDefault();
+        alert('{requiredText}');
+      }
     });
+  });
 </script>

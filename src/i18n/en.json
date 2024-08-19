@@ -1,0 +1,182 @@
+{
+  "nav": {
+    "home": "Home",
+    "traduccion": "Translation",
+    "interpretacion": "Interpretation",
+    "contacto": "Contact"
+  },
+
+  "contact": {
+    "title": "Contact",
+    "nameLabel": "First Name",
+    "lastNameLabel": "Last Name",
+    "businessNameLabel": "Business Name",
+    "telephoneLabel": "Telephone",
+    "emailLabel": "Email",
+    "commentsLabel": "Comments",
+    "submitButtonText": "Submit",
+    "requiredText": "Please fill out the required fields."
+  },
+
+  "form": {
+    "name": "Name",
+    "lastName": "Last Name",
+    "businessName": "Business Name",
+    "telephone": "Phone",
+    "email": "Email",
+    "comments": "Comments",
+    "submit": "Submit",
+    "required": "Please fill in the required fields."
+  },
+
+  "pages": {
+    "about": "About Us",
+    "interpretation": "Interpretation Services",
+    "traduccion": "Translation Services",
+    "contacto": "Contact Us"
+  },
+
+  "footer": {
+    "copyright": "InterpreterStrike. All rights reserved.",
+    "cookie": "We use cookies to improve your experience on our site. By continuing to browse, you accept the use of cookies.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use",
+    "cookies": "Cookies",
+    "accept": "Accept",
+    "deny": "Deny",
+    "contact": {
+      "title": "Contact Information",
+      "email": "Email: info@interpreterstrike.com",
+      "phone": "Phone: +123 456 7890",
+      "address": "Address: Interpretation Street, 123, City, Country"
+    }
+  },
+
+  "languages": {
+    "es": "Spanish",
+    "en": "English"
+  },
+
+  "interpretation": {
+    "title": "Interpretation",
+    "sections": {
+      "professionalServices": {
+        "title": "Professional Interpretation Services",
+        "description": "At InterpreterStrike, we provide high-quality interpretation services to ensure effective and accurate communication in a wide range of settings. Our team of experienced interpreters is ready to assist in conferences, business meetings, legal events, and more."
+      },
+      "whatWeOffer": {
+        "title": "What We Offer",
+        "simultaneousInterpretation": {
+          "title": "Simultaneous Interpretation",
+          "items": [
+            {
+              "title": "Conferences",
+              "description": "Real-time interpretation for conferences and seminars."
+            },
+            {
+              "title": "International Events",
+              "description": "Assistance at trade fairs, congresses, and international meetings."
+            },
+            {
+              "title": "Live Broadcasts",
+              "description": "Interpretation for live broadcast events."
+            }
+          ]
+        },
+        "consecutiveInterpretation": {
+          "title": "Consecutive Interpretation",
+          "items": [
+            {
+              "title": "Business Meetings",
+              "description": "Interpretation during corporate meetings and negotiations."
+            },
+            {
+              "title": "Interviews",
+              "description": "Assistance in interviews and Q&A sessions."
+            },
+            {
+              "title": "Presentations",
+              "description": "Interpretation for product presentations and launches."
+            }
+          ]
+        },
+        "legalInterpretation": {
+          "title": "Legal Interpretation",
+          "items": [
+            {
+              "title": "Judicial Hearings",
+              "description": "Interpretation in courts and legal proceedings."
+            },
+            {
+              "title": "Legal Consultations",
+              "description": "Interpretation for consultations and meetings with lawyers."
+            },
+            {
+              "title": "Statements",
+              "description": "Assistance in taking statements and testimonies."
+            }
+          ]
+        },
+        "medicalInterpretation": {
+          "title": "Medical Interpretation",
+          "items": [
+            {
+              "title": "Medical Consultations",
+              "description": "Interpretation during medical consultations and visits."
+            },
+            {
+              "title": "Medical Conferences",
+              "description": "Assistance at health sector conferences and seminars."
+            },
+            {
+              "title": "Therapy Sessions",
+              "description": "Interpretation for therapy sessions and psychological consultations."
+            }
+          ]
+        }
+      },
+      "workingProcess": {
+        "title": "Our Working Process",
+        "steps": [
+          {
+            "title": "Event Planning",
+            "description": "We coordinate with the client to understand the needs and context of the event."
+          },
+          {
+            "title": "Interpreter Assignment",
+            "description": "We select the most suitable interpreters based on the topic and language."
+          },
+          {
+            "title": "Preparation and Review",
+            "description": "Our interpreters prepare by reviewing provided materials and familiarizing themselves with the content."
+          },
+          {
+            "title": "Execute Interpretation",
+            "description": "We provide on-site or remote interpretation, ensuring clear and accurate communication."
+          }
+        ]
+      },
+      "whyChooseUs": {
+        "title": "Why Choose Us?",
+        "items": [
+          {
+            "title": "Professionalism and Quality",
+            "description": "Certified and experienced interpreters."
+          },
+          {
+            "title": "Confidentiality",
+            "description": "We respect the privacy and security of all information."
+          },
+          {
+            "title": "Flexibility",
+            "description": "We adapt our services to the specific needs of each client."
+          },
+          {
+            "title": "Multilingual Support",
+            "description": "We offer interpretation services in multiple languages and dialects."
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,7 +1,8 @@
 ---
+import { getLangFromUrl } from "../i18n/utils";
 import LanguagePicker from "./LanguagePicker.astro";
 
-const { lang } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
 
 // Traducciones para el footer
 const translations = {
@@ -54,6 +55,7 @@ const t = translations[lang] || translations.es;
   </div>
   <LanguagePicker />
 </footer>
+
 
 <style>
   footer {

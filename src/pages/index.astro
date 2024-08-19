@@ -1,6 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+import LanguagePicker from '../components/LanguagePicker.astro';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <Layout title="Interpreters Booth">
@@ -11,74 +16,100 @@ import Card from '../components/Card.astro';
 			Bienvenido a Interpreters Booth, tu socio de confianza para servicios de interpretación y traducción profesional. Ofrecemos soluciones lingüísticas precisas y eficientes para todas tus necesidades comunicativas.
 
 		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Servicios de Interpretación en Tiempo Real"
-				body="Brindamos interpretación simultánea y consecutiva para conferencias, reuniones y eventos, asegurando una comunicación fluida y precisa en cualquier idioma."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Traducciones Técnicas y Especializadas"
-				body="Nuestro equipo de expertos traductores maneja documentos técnicos, legales y médicos con la máxima precisión y confidencialidad."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Asesoramiento Lingüístico Personalizado"
-				body="Ofrecemos consultoría lingüística para ayudarte a desarrollar estrategias de comunicación efectivas y adaptadas a tus necesidades específicas."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Formación y Talleres de Idiomas"
-				body="Mejora tus habilidades lingüísticas con nuestros cursos y talleres personalizados, diseñados para profesionales y empresas que buscan dominar nuevos idiomas."
-			/>
-		</ul>
-	</main>
+    <ul role="list" class="link-card-grid">
+      {lang === 'en' ? (
+        <>
+          <Card
+            href="/en/realtime-interpretation"
+            title="Real-Time Interpretation Services"
+            body="We provide simultaneous and consecutive interpretation for conferences, meetings, and events, ensuring fluid and accurate communication in any language."
+          />
+          <Card
+            href="/en/technical-translations"
+            title="Technical and Specialized Translations"
+            body="Our team of expert translators handle technical, legal, and medical documents with the utmost precision and confidentiality."
+          />
+          <Card
+            href="/en/linguistic-consulting"
+            title="Personalized Linguistic Consulting"
+            body="We offer linguistic consulting to help you develop effective communication strategies tailored to your specific needs."
+          />
+          <Card
+            href="/en/language-training"
+            title="Language Training and Workshops"
+            body="Improve your language skills with our personalized courses and workshops, designed for professionals and companies looking to master new languages."
+          />
+        </>
+      ) : (
+        <>
+          <Card
+            href="/es/servicios-interpretacion"
+            title="Servicios de Interpretación en Tiempo Real"
+            body="Ofrecemos interpretación simultánea y consecutiva para conferencias, reuniones y eventos, asegurando una comunicación fluida y precisa en cualquier idioma."
+          />
+          <Card
+            href="/es/traducciones-tecnicas"
+            title="Traducciones Técnicas y Especializadas"
+            body="Nuestro equipo de expertos traductores maneja documentos técnicos, legales y médicos con la máxima precisión y confidencialidad."
+          />
+          <Card
+            href="/es/consultoria-linguistica"
+            title="Asesoramiento Lingüístico Personalizado"
+            body="Ofrecemos consultoría lingüística para ayudarte a desarrollar estrategias de comunicación efectivas y adaptadas a tus necesidades específicas."
+          />
+          <Card
+            href="/es/formacion-idiomas"
+            title="Formación y Talleres de Idiomas"
+            body="Mejora tus habilidades lingüísticas con nuestros cursos y talleres personalizados, diseñados para profesionales y empresas que buscan dominar nuevos idiomas."
+          />
+        </>
+      )}
+    </ul>
+  </main>
+ 
 </Layout>
 
 <style>
-	main {
-		margin: auto;
-		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
-		color: #000000;
-		font-size: 20px;
-		line-height: 1.6;
-	}
-	
-	body {
-                font-family: Arial, sans-serif;
-                line-height: 1.6;
-                margin: 0;
-                padding: 20px;
-                color: #333;
-                background-color: #f9f9f9;
-            }
-            h1, h2, h3 {
-                color: #c14747;
-            }
-            .content {
-                max-width: 800px;
-                margin: auto;
-            }
-            .section {
-                margin-bottom: 2rem;
-            }
-            ul {
-                padding-left: 20px;
-            }
-	.text-gradient {
-		background-image: var(--accent-gradient);		
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 2rem;
-		padding: 0;
-	}
+  main {
+    margin: auto;
+    padding: 1rem;
+    width: 800px;
+    max-width: calc(100% - 2rem);
+    color: #000000;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+    background-color: #f9f9f9;
+  }
+
+  h1, h2, h3 {
+    color: #c14747;
+  }
+
+  .content {
+    max-width: 800px;
+    margin: auto;
+  }
+
+  .section {
+    margin-bottom: 2rem;
+  }
+
+  ul {
+    padding-left: 20px;
+  }
+
+  .link-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    gap: 2rem;
+    padding: 0;
+  }
 </style>

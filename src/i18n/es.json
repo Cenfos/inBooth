@@ -1,0 +1,59 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "traduccion": "Traducción",
+    "interpretacion": "Interpretación",
+    "contacto": "Contacto"
+  },
+
+  "contact": {
+    "title": "Contacto",
+    "nameLabel": "Nombre",
+    "lastNameLabel": "Apellidos",
+    "businessNameLabel": "Razón Social",
+    "telephoneLabel": "Teléfono",
+    "emailLabel": "Correo Electrónico",
+    "commentsLabel": "Observaciones",
+    "submitButtonText": "Enviar",
+    "requiredText": "Por favor, complete los campos obligatorios."
+  },
+
+  "form": {
+    "name": "Nombre",
+    "lastName": "Apellidos",
+    "businessName": "Razón Social",
+    "telephone": "Teléfono",
+    "email": "Correo Electrónico",
+    "comments": "Observaciones",
+    "submit": "Enviar",
+    "required": "Por favor, complete los campos obligatorios."
+  },
+
+  "pages": {
+    "about": "Acerca de Nosotros",
+    "interpretation": "Servicios de Interpretación",
+    "traduccion": "Servicios de Traducción",
+    "contacto": "Contáctanos"
+  },
+
+  "footer": {
+    "copyright": "InterpreterStrike. Todos los derechos reservados.",
+    "cookie": "Usamos cookies para mejorar su experiencia en nuestro sitio web. Al continuar navegando, acepta el uso de cookies.",
+    "privacy": "Política de privacidad",
+    "terms": "Términos de uso",
+    "cookies": "Cookies",
+    "accept": "Aceptar",
+    "deny": "Rechazar",
+    "contact": {
+      "title": "Información de Contacto",
+      "email": "Correo Electrónico: info@interpreterstrike.com",
+      "phone": "Teléfono: +123 456 7890",
+      "address": "Dirección: Interpretación Calle, 123, Ciudad, País"
+    }
+  },
+
+  "languages": {
+    "es": "Español",
+    "en": "Inglés"
+  }
+}

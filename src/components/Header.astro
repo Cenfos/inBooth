@@ -8,7 +8,7 @@ const t = useTranslations(lang);
 
 <header>
   <div class="logo">
-    <span>IP</span>
+    <span class="logo-text">Interpreters Booth</span>
   </div>
   <button class="menu-toggle" aria-label="Toggle menu">
     &#9776;
@@ -20,9 +20,10 @@ const t = useTranslations(lang);
       <li><a href={lang === 'en' ? '/en/interpretacion' : '/es/interpretacion'}>{t('nav.interpretacion')}</a></li>
       <li><a href={lang === 'en' ? '/en/contacto' : '/es/contacto'}>{t('nav.contacto')}</a></li>
       <li><a href={lang === 'en' ? '/en/about' : '/es/about'}>{t('nav.about')}</a></li>
+      <LanguagePicker />
     </ul>
   </nav>
-  <LanguagePicker />
+  
 </header>
 
 <style scoped>
@@ -40,6 +41,12 @@ const t = useTranslations(lang);
   .logo {
     display: flex;
     align-items: center;
+  }
+
+  .logo-text {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
   }
 
   .logo img {

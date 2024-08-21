@@ -16,7 +16,7 @@ const t = useTranslations(lang);
 			Bienvenido a Interpreters Booth, tu socio de confianza para servicios de interpretación y traducción profesional. Ofrecemos soluciones lingüísticas precisas y eficientes para todas tus necesidades comunicativas.
 
 		</p>
-    <ul role="list" class="link-card-grid">
+    <ul class="link-card-grid">
       {lang === 'en' ? (
         <>
           <Card
@@ -73,7 +73,7 @@ const t = useTranslations(lang);
   main {
     margin: auto;
     padding: 1rem;
-    width: 800px;
+    width: 1200px;
     max-width: calc(100% - 2rem);
     color: #000000;
     font-size: 20px;
@@ -94,7 +94,7 @@ const t = useTranslations(lang);
   }
 
   .content {
-    max-width: 800px;
+    max-width: 1200px;
     margin: auto;
   }
 
@@ -111,5 +111,6 @@ const t = useTranslations(lang);
     grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
     gap: 2rem;
     padding: 0;
+    list-style: none;
   }
 </style>

@@ -1,26 +1,24 @@
 ---
 interface Props {
-	title: string;
-	body: string;
-	href: string;
+  title: string;
+  body: string;
+  href: string;
 }
 
 const { href, title, body } = Astro.props;
 ---
 
 <li class="link-card">
-    <a href={href}>
-        <h2>
-            {title}
-            <span>&rarr;</span>
-        </h2>
-        <p>
-            {body}
-        </p>
-    </a>
+  <a href={href}>
+    <h2>
+      {title}
+      <span>&rarr;</span>
+    </h2>
+    <p>{body}</p>
+  </a>
 </li>
 
-<style>
+<style scoped>
   :root {
     --accent: #007aff; /* Azul de Apple */
     --card-bg: #ffffff; /* Fondo blanco para las tarjetas */
@@ -30,16 +28,17 @@ const { href, title, body } = Astro.props;
     --text-color: #333333; /* Texto oscuro */
   }
 
+  
+
   .link-card {
-    display: flex;
-    padding: 40px;
     background-color: var(--card-bg);
     border-radius: 12px;
     box-shadow: 0 4px 8px var(--shadow-light);
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    margin: 20px;
     width: 100%;
-    max-width: 300px; /* Ajusta el ancho máximo */
-    margin: 10px auto; /* Centra las tarjetas */
+    max-width: 400px;
+    box-sizing: border-box;
   }
 
   .link-card > a {
@@ -48,7 +47,8 @@ const { href, title, body } = Astro.props;
     color: var(--text-color);
     display: flex;
     flex-direction: column;
-    width: 100%;
+    padding: 20px;
+    height: 100%;
   }
 
   h2 {
@@ -59,8 +59,8 @@ const { href, title, body } = Astro.props;
   }
 
   p {
-    margin: 0.5rem 0;
-    font-size: 1rem;
+    margin: 0.5rem 0 0 0;
+    font-size: 1.125rem;
   }
 
   .link-card:hover {
@@ -73,8 +73,25 @@ const { href, title, body } = Astro.props;
   }
 
   @media (max-width: 600px) {
+  
+
     .link-card {
-      margin: 10px 20px; /* Añadir margen en los lados para pantallas pequeñas */
+      margin: 15px 0; /* Reduce el margen vertical en móviles */
+      max-width: 100%; /* Asegura que ocupe todo el ancho disponible */
+      width: 100%; /* Asegura que no haya desbordamiento horizontal */
+    }
+
+    .link-card > a {
+      padding: 15px;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+
+    }
+
+    p {
+      font-size: 1rem;
     }
   }
 </style>

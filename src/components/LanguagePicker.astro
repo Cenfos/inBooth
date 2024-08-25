@@ -6,38 +6,95 @@ import {
     useTranslatedPath,
 } from '../i18n/utils';
 
-const lang = getLangFromUrl(Astro.url);
+const currentLang = getLangFromUrl(Astro.url);
 
-const t = useTranslations(lang);
-const translatePath = useTranslatedPath(lang);
+const t = useTranslations(currentLang);
+const translatePath = useTranslatedPath(currentLang);
 ---
+
 <div class="language-selector">
-  {Object.entries(languages).map(([lang, label]) => (
-    <button class="language-button" onclick={`window.location.href='/${lang}/'`}>
-      {label}
-    </button>
-  ))}
+  <div class="dropdown">
+    <button class="dropbtn">{languages[currentLang]}</button>
+    <div class="dropdown-content">
+      {Object.entries(languages).map(([lang, label]) => (
+        <a 
+          class={currentLang === lang ? 'active' : ''}
+          href={`/${lang}/`}
+        >
+          {label}
+        </a>
+      ))}
+    </div>
+  </div>
 </div>
 
 <style scoped>
+  /* Estilos generales del selector */
   .language-selector {
     display: flex;
-    gap: 18px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
   }
 
-  .language-button {
-    background-color: transparent;
-    border: 2px solid #333;
-    color: #333;
-    font-size: 16px;
-    cursor: pointer;
-    padding: 8px 16px;
-    border-radius: 8px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-
-  .language-button:hover {
+  /* Estilo del botón principal (redondeado) */
+  .dropbtn {
     background-color: #1368ea;
-    color: #fff;
+    color: white;
+    padding: 10px 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .dropbtn:hover {
+    background-color: #0d4fbb;
+  }
+
+  /* Estilo del contenedor desplegable */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* Estilo del contenido desplegable */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 14px;
+    min-width: 100px;
+    z-index: 1;
+  }
+
+  /* Estilo de cada enlace en el desplegable */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+
+  /* Cambio de color al pasar el mouse */
+  .dropdown-content a:hover {
+    background-color: #1368ea;
+    color: white;
+  }
+
+  /* Indicar el idioma activo */
+  .dropdown-content a.active {
+    font-weight: bold;
+    background-color: #1368ea;
+    color: white;
+  }
+
+  /* Mostrar el contenido del menú desplegable al hacer hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
   }
 </style>

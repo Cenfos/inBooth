@@ -1,0 +1,95 @@
+---
+// CookieNotice.astro
+import { getLangFromUrl } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+
+// Traducciones para el aviso de cookies
+const translations = {
+  es: {
+    cookies: "Usamos cookies para mejorar su experiencia en nuestro sitio web.\nAl continuar navegando, acepta el uso de cookies.",
+    accept: "Aceptar",
+    deny: "Denegar",
+  },
+  en: {
+    cookies: "We use cookies to improve your experience on our site. \nBy continuing to browse, you accept the use of cookies.",
+    accept: "Accept",
+    deny: "Deny",
+  },
+};
+
+const t = translations[lang] || translations.es;
+---
+
+<div class="cookie-notice" id="cookie-notice">
+  <p>{t.cookies}</p>
+  <div class="cookie-buttons">
+    <button id="accept-cookies" class="cookie-button">{t.accept}</button>
+    <button id="deny-cookies" class="cookie-button">{t.deny}</button>
+  </div>
+</div>
+
+<style is: global>
+  .cookie-notice {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 16px;
+    max-width: 90%;
+    white-space: pre-wrap; /* Respeta los saltos de línea */
+  }
+  .cookie-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  .cookie-button {
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+  }
+  .cookie-button:hover {
+    background-color: #0056b3;
+  }
+</style>
+
+<script is:inline>
+  document.addEventListener('astro:page-load', () => {
+    const cookieNotice = document.getElementById('cookie-notice');
+    const acceptCookiesButton = document.getElementById('accept-cookies');
+    const denyCookiesButton = document.getElementById('deny-cookies');
+
+    const cookiesAccepted = localStorage.getItem('cookies-accepted');
+    if (cookiesAccepted === 'true' || cookiesAccepted === 'false') {
+      cookieNotice.style.display = 'none';
+    } else {
+      cookieNotice.style.display = 'flex';
+    }
+
+    acceptCookiesButton.addEventListener('click', () => {
+      localStorage.setItem('cookies-accepted', 'true');
+      cookieNotice.style.display = 'none';
+    });
+
+    denyCookiesButton.addEventListener('click', () => {
+      localStorage.setItem('cookies-accepted', 'false');
+      cookieNotice.style.display = 'none';
+    });
+  });
+</script>

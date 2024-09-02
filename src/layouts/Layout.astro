@@ -1,8 +1,9 @@
 ---
 import Header from '../components/Header.astro';
-import Menu from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
+import { ViewTransitions } from 'astro:transitions';
+import CookieNotice from '../components/CookieNotice.astro';
 
 interface Props {
 	title: string;
@@ -21,11 +22,15 @@ const { currentLocale } = Astro;
 		<meta name="generator" content={Astro.generator} />
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" />
 		<title>{title}</title>
+		<ViewTransitions />
 	</head>
 	<body>
 		<Header />
 		<slot />
-		<Footer />
+	
+	<CookieNotice />
+	<Footer />
 	</body>
+	
 </html>
 

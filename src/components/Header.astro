@@ -111,7 +111,7 @@ const t = useTranslations(lang);
       left: 0;
       background-color: #fff;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      padding: 15px 0;
+      padding: 15px 0;      
     }
 
     nav ul.show-menu {
@@ -130,7 +130,7 @@ const t = useTranslations(lang);
 </style>
 
 <script is:inline>
-  document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('astro:page-load', () => {
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
 

@@ -1,10 +1,10 @@
 ---
-import { languages } from '../i18n/ui';
+import { languages } from "../i18n/ui";
 import {
-    getLangFromUrl,
-    useTranslations,
-    useTranslatedPath,
-} from '../i18n/utils';
+  getLangFromUrl,
+  useTranslations,
+  useTranslatedPath,
+} from "../i18n/utils";
 
 const currentLang = getLangFromUrl(Astro.url);
 
@@ -16,14 +16,13 @@ const translatePath = useTranslatedPath(currentLang);
   <div class="dropdown">
     <button class="dropbtn">{languages[currentLang]}</button>
     <div class="dropdown-content">
-      {Object.entries(languages).map(([lang, label]) => (
-        <a 
-          class={currentLang === lang ? 'active' : ''}
-          href={`/${lang}/`}
-        >
-          {label}
-        </a>
-      ))}
+      {
+        Object.entries(languages).map(([lang, label]) => (
+          <a class={currentLang === lang ? "active" : ""} href={`/${lang}/`}>
+            {label}
+          </a>
+        ))
+      }
     </div>
   </div>
 </div>
@@ -64,7 +63,7 @@ const translatePath = useTranslatedPath(currentLang);
     display: none;
     position: absolute;
     background-color: #f9f9f9;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     border-radius: 14px;
     min-width: 100px;
     z-index: 1;

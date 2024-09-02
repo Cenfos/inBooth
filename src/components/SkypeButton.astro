@@ -1,0 +1,28 @@
+---
+// SkypeButton.astro
+const skypeUsername = "tu_nombre_de_skype"; // Reemplaza con tu nombre de usuario de Skype
+const skypeUrl = `skype:${skypeUsername}?chat`;
+---
+
+<div class="skype-button">
+  <a href={skypeUrl} target="_blank" aria-label="Chat on Skype">
+    <img src="../public/icons8-skype-48.svg" alt="Skype Icon" />
+  </a>
+</div>
+
+<style>
+  .skype-button {
+    border-radius: 50%;
+    padding: 10px;
+    transition: transform 0.3s ease;
+  }
+
+  .skype-button:hover {
+    transform: scale(1.1);
+  }
+
+  .skype-button img {
+    width: 40px;
+    height: 40px;
+  }
+</style>

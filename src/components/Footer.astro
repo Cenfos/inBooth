@@ -1,7 +1,8 @@
 ---
 import { getLangFromUrl } from "../i18n/utils";
-import LanguagePicker from "./LanguagePicker.astro";
-
+import Wasap from "./Wasap.astro";
+import SkypeButton from "./SkypeButton.astro";
+import InstagramButton from "./InstagramButton.astro";
 const lang = getLangFromUrl(Astro.url);
 
 // Traducciones para el footer
@@ -37,6 +38,12 @@ const t = translations[lang] || translations.es;
 ---
 
 <footer>
+  <div class= "social-icons">
+    <Wasap />
+    <SkypeButton />
+    <InstagramButton />
+  </div>
+  
   <div class="footer-content">
     <div class="contact-info">
       <h3>{t.contact.title}</h3>
@@ -46,16 +53,18 @@ const t = translations[lang] || translations.es;
     </div>
     <p>&copy; {new Date().getFullYear()} InterpreterStrike. {t.copyright}</p>
   
+    
+    <p>Icons by <a target="_blank" href="https://icons8.com">Icons8</a>
   </div>
-  <LanguagePicker />
+  
 </footer>
 
 
 <style is: global>
   footer {
     background-color: #eeeff0;
-    padding: 20px 30px;
-    margin-top: 50px;
+    padding: 10px 15px;
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -69,11 +78,17 @@ const t = translations[lang] || translations.es;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin: 22px;
+    margin: 10px;
   }
   .contact-info {
     margin-bottom: 1rem;
   }
+  .social-icons {
+    display: flex;
+    gap: 10px; /* Espacio entre los iconos */
+    margin-bottom: 10px; /* Espacio entre los iconos y el contenido del footer */
+  }
+
 
 </style>
 

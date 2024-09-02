@@ -1,0 +1,29 @@
+---
+// Wasap.astro
+const phoneNumber = "34685872868";
+const message = "Hola, me gustaría obtener más información";
+const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+---
+
+<div class="whatsapp-button">
+  <a href={whatsappUrl} target="_blank" aria-label="Chat on WhatsApp">
+    <img src="../public/whatsapp-48.svg" alt="WhatsApp Icon" />
+  </a>
+</div>
+
+<style>
+  .whatsapp-button {
+    border-radius: 50%;
+    padding: 10px;
+    transition: transform 0.3s ease;
+  }
+
+  .whatsapp-button:hover {
+    transform: scale(1.1);
+  }
+
+  .whatsapp-button img {
+    width: 40px;
+    height: 40px;
+  }
+</style>

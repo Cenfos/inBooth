@@ -4,6 +4,7 @@ import Layout from '../../layouts/Layout.astro';
 
 <Layout title="Real-Time Interpretation Services">
   <main>
+    <div class="content">
     <h1>Real-Time Interpretation Services</h1>
     <p>
       We offer simultaneous and consecutive interpretation services for events and conferences. Our professional interpreters are available in real-time to ensure smooth communication between languages.
@@ -15,5 +16,23 @@ import Layout from '../../layouts/Layout.astro';
       <li>Legal Interpretation</li>
       <li>Medical Interpretation</li>
     </ul>
+
+    </div>
   </main>
 </Layout>
+<style>
+  /* Sobreescribir el límite de ancho del body y eliminar la imagen de fondo */
+  body {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url('/images/diary.jpg'); /* Ruta a tu imagen de fondo */
+    background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
+    background-position: center; /* Centra la imagen de fondo */
+    background-attachment: fixed; /* Mantiene la imagen fija al hacer scroll */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    
+  }
+ 
+  
+</style>

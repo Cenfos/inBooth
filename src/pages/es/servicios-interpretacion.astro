@@ -1,19 +1,46 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import Layout from "../../layouts/Layout.astro";
 ---
 
 <Layout title="Servicios de Interpretación en Tiempo Real">
   <main>
-    <h1>Servicios de Interpretación en Tiempo Real</h1>
-    <p>
-      Ofrecemos servicios de interpretación simultánea y consecutiva para eventos y conferencias. Nuestros intérpretes profesionales están disponibles en tiempo real para asegurar una comunicación fluida entre idiomas.
-    </p>
-    <h2>Nuestros Servicios</h2>
-    <ul>
-      <li>Interpretación Simultánea</li>
-      <li>Interpretación Consecutiva</li>
-      <li>Interpretación Legal</li>
-      <li>Interpretación Médica</li>
-    </ul>
+    
+      <div>
+        <h1>Servicios de Interpretación en Tiempo Real</h1>
+        <p>
+          Ofrecemos servicios de interpretación simultánea y consecutiva para
+          eventos y conferencias.<br> Nuestros intérpretes profesionales están
+          disponibles en tiempo real para asegurar una comunicación fluida entre
+          idiomas.
+        </p>
+      </div>
+        
+        <div>
+        <h2>Nuestros Servicios</h2>
+        <ul>
+          <li>Interpretación Simultánea</li>
+          <li>Interpretación Consecutiva</li>
+          <li>Interpretación Legal</li>
+          <li>Interpretación Médica</li>
+        </ul>
+      </div>
+      
+    
   </main>
 </Layout>
+
+<style>
+  /* Sobreescribir el límite de ancho del body y eliminar la imagen de fondo */
+  body {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url('/images/diary.jpg'); /* Ruta a tu imagen de fondo */
+    background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
+    background-position: center; /* Centra la imagen de fondo */
+    background-attachment: fixed; /* Mantiene la imagen fija al hacer scroll */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    
+  }
+  
+</style>

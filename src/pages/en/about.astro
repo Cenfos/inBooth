@@ -1,11 +1,63 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import Card from '../../components/Card.astro';
+import Layout from "../../layouts/Layout.astro";
+import Card from "../../components/Card.astro";
 ---
 
 <Layout title="InterpreterStrike">
-	<main>
-        <h1>About Interpreters Booth</h1>
-        
-    </main>
+  <main>
+    <div class="content">
+      <h1>About Interpreters Booth</h1>
+      <div class="section">
+        <h2>Our Working Process</h2>
+        <ol>
+          <li>
+            <strong>Project Analysis:</strong> We evaluate the document and the client's
+            requirements to assign the most suitable translator.
+          </li>
+          <li>
+            <strong>Translation:</strong> Our specialized translator performs the
+            translation maintaining terminological accuracy and the original document's
+            style.
+          </li>
+          <li>
+            <strong>Review and Editing:</strong> A second linguist reviews and edits
+            the text to ensure the highest quality.
+          </li>
+          <li>
+            <strong>On-time Delivery:</strong> We deliver the project within the
+            agreed timeframe, ensuring it meets all the client's expectations.
+          </li>
+        </ol>
+      </div>
+
+      <div class="section">
+        <h2>Why Choose Us?</h2>
+        <ul>
+          <li>
+            <strong>Professionalism and Quality:</strong> We have a team of certified
+            and experienced translators.
+          </li>
+          <li>
+            <strong>Confidentiality:</strong> We maintain the privacy and security
+            of all documents.
+          </li>
+          <li>
+            <strong>Adaptability:</strong> We adapt to the specific needs and deadlines
+            of each client.
+          </li>
+          <li>
+            <strong>Multilingual Support:</strong> We offer translation services
+            in multiple languages and dialects.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </main>
 </Layout>
+<style>
+  .content {
+    background-image: none;
+    background-color: rgba(249, 249, 249, 0.659);
+    padding: 35px;
+  }
+</style>

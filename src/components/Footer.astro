@@ -17,6 +17,8 @@ const translations = {
     cookies: "Usamos cookies para mejorar su experiencia en nuestro sitio web.\nAl continuar navegando, acepta el uso de cookies.",
     accept: "Aceptar",
     deny: "Denegar",
+    privacyPolicy: "Política de Privacidad",
+    cookiesPolicy: "Política de Cookies",
     copyright: "Todos los derechos reservados.",
   },
   en: {
@@ -29,6 +31,8 @@ const translations = {
     cookies: "We use cookies to improve your experience on our site. \nBy continuing to browse, you accept the use of cookies.",
     accept: "Accept",
     deny: "Deny",
+    privacyPolicy: "Privacy Policy",
+    cookiesPolicy: "Cookies Policy",
     copyright: "All rights reserved.",
   },
 };
@@ -38,7 +42,7 @@ const t = translations[lang] || translations.es;
 ---
 
 <footer>
-  <div class= "social-icons">
+  <div class="social-icons">
     <Wasap />
     <SkypeButton />
     <InstagramButton />
@@ -51,14 +55,23 @@ const t = translations[lang] || translations.es;
       <p>{t.contact.phone}</p>
       <p>{t.contact.address}</p>
     </div>
+
+    <div class="policy-links">
+      <!-- Enlaces dinámicos basados en el idioma -->
+      <a href={lang === 'en' ? '/en/PrivacyPolicy' : '/es/PoliticaPrivacidad'}>
+        {t.privacyPolicy}
+      </a>
+      |
+      <a href={lang === 'en' ? '/en/CookiesPolicy' : '/es/PoliticaCookies'}>
+        {t.cookiesPolicy}
+      </a>
+    </div>
+
     <p>&copy; {new Date().getFullYear()} InterpreterStrike. {t.copyright}</p>
-  
-    
-    <p>Icons by <a target="_blank" href="https://icons8.com">Icons8</a>
   </div>
   
+  <p>Icons by <a target="_blank" href="https://icons8.com">Icons8</a></p>
 </footer>
-
 
 <style is:global>
   footer {
@@ -71,8 +84,9 @@ const t = translations[lang] || translations.es;
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
     font-size: 14px;
     color: #333;
-    
   }
+  
+
   .footer-content {
     display: flex;
     flex-direction: column;
@@ -80,15 +94,31 @@ const t = translations[lang] || translations.es;
     text-align: center;
     margin: 10px;
   }
+
   .contact-info {
     margin-bottom: 1rem;
   }
-  .social-icons {
-    display: flex;
-    gap: 10px; /* Espacio entre los iconos */
-    margin-bottom: 10px; /* Espacio entre los iconos y el contenido del footer */
+
+  .policy-links {
+    margin: 1rem 0;
   }
 
+  .social-icons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .policy-links {
+    margin: 1rem 0;
+  }
 
+  .policy-links a {
+    color: #007aff; /* Azul de Apple */
+    text-decoration: none; /* Quitar subrayado */
+    font-weight: bold;
+  }
+
+  .policy-links a:hover {
+    text-decoration: underline; /* Subrayar al pasar el cursor */
+  }
 </style>
-

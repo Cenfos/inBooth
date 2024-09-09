@@ -20,7 +20,15 @@ import Layout from '../../layouts/Layout.astro';
     </div>
   </main>
 </Layout>
+<!-- Custom styles for the page -->
 <style>
+  .hero {
+    background-color: #f9f9f9;
+    padding: 2rem;
+    text-align: center;
+  }
+
+ 
   /* Sobreescribir el límite de ancho del body y eliminar la imagen de fondo */
   body {
     max-width: 100%;
@@ -33,6 +41,9 @@ import Layout from '../../layouts/Layout.astro';
     background-repeat: no-repeat; /* Evita que la imagen se repita */
     
   }
- 
-  
+  .content {
+    background-image: none;
+    background-color: rgba(249, 249, 249, 0.659);
+    padding: 35px;
+  }  
 </style>

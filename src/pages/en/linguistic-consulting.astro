@@ -1,0 +1,76 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Personalized Linguistic Consulting">
+  <main class="linguistic-consulting-page">
+    <section class="hero">
+      <h1>Personalized Linguistic Consulting</h1>
+      <p>
+        We offer linguistic consulting services to help you develop effective communication strategies tailored to your specific needs.
+      </p>
+    </section>
+
+    <section class="content">
+      <div class="service-description">
+        <h2>What is Linguistic Consulting?</h2>
+        <p>
+          Linguistic consulting helps businesses and individuals navigate complex language and communication challenges. Our team of experts works closely with you to design customized solutions for your specific linguistic needs.
+        </p>
+      </div>
+
+      <div class="service-areas">
+        <h2>Our Consulting Services Include</h2>
+        <ul>
+          <li>
+            <strong>Language Strategy:</strong> Developing communication strategies that align with your goals.
+          </li>
+          <li>
+            <strong>Cross-Cultural Communication:</strong> Enhancing interactions between diverse linguistic and cultural groups.
+          </li>
+          <li>
+            <strong>Speech Writing:</strong> Crafting speeches and presentations that are clear, persuasive, and culturally appropriate.
+          </li>
+          <li>
+            <strong>Training:</strong> Providing linguistic training for your teams to improve communication skills.
+          </li>
+        </ul>
+      </div>
+
+      <div class="why-us">
+        <h2>Why Choose Us?</h2>
+        <p>
+          Our expert consultants have years of experience working with businesses and individuals to create impactful communication strategies. We offer tailored solutions that address the unique linguistic challenges you face.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Custom styles for the page -->
+  <style>
+    .hero {
+      background-color: #f9f9f9;
+      padding: 2rem;
+      text-align: center;
+    }
+
+   
+    /* Sobreescribir el límite de ancho del body y eliminar la imagen de fondo */
+    body {
+      max-width: 100%;
+      margin: 0;
+      padding: 0;
+      background-image: url('/images/diary.jpg'); /* Ruta a tu imagen de fondo */
+      background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
+      background-position: center; /* Centra la imagen de fondo */
+      background-attachment: fixed; /* Mantiene la imagen fija al hacer scroll */
+      background-repeat: no-repeat; /* Evita que la imagen se repita */
+      
+    }
+    .content {
+      background-image: none;
+      background-color: rgba(249, 249, 249, 0.659);
+      padding: 35px;
+    }  
+  </style>
+</Layout>

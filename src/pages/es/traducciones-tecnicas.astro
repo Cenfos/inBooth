@@ -1,0 +1,82 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Traducciones Técnicas y Especializadas">
+  <main class="technical-translation-page">
+    <section class="hero">
+      <h1>Traducciones Técnicas y Especializadas</h1>
+      <p>
+        Nuestro equipo de expertos traductores maneja documentos técnicos,
+        legales y médicos con la máxima precisión y confidencialidad.
+      </p>
+    </section>
+
+    <section class="content">
+      <div class="service-description">
+        <h2>¿Qué son las Traducciones Técnicas?</h2>
+        <p>
+          Las traducciones técnicas requieren un conocimiento especializado
+          tanto del idioma como del área temática. En InterpreterStrike, nos
+          aseguramos de que cada documento sea preciso y cumpla con los
+          estándares específicos de cada industria.
+        </p>
+      </div>
+
+      <div class="service-areas">
+        <h2>Áreas de Especialización</h2>
+        <ul>
+          <li>
+            <strong>Traducciones Técnicas:</strong> Manuales, guías de usuario,
+            documentación de ingeniería y tecnología.
+          </li>
+          <li>
+            <strong>Traducciones Legales:</strong> Contratos, documentos judiciales,
+            documentos notariales.
+          </li>
+          <li>
+            <strong>Traducciones Médicas:</strong> Informes médicos, estudios clínicos,
+            artículos científicos.
+          </li>
+        </ul>
+      </div>
+
+      <div class="why-us">
+        <h2>¿Por qué Elegirnos?</h2>
+        <p>
+          Contamos con traductores nativos, expertos en su área de conocimiento y
+          con años de experiencia. Garantizamos precisión, confidencialidad y
+          cumplimiento con plazos de entrega ajustados a sus necesidades.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Custom styles for the page -->
+  <style>
+    .hero {
+      background-color: #f9f9f9;
+      padding: 2rem;
+      text-align: center;
+    }
+
+   
+    /* Sobreescribir el límite de ancho del body y eliminar la imagen de fondo */
+    body {
+      max-width: 100%;
+      margin: 0;
+      padding: 0;
+      background-image: url('/images/diary.jpg'); /* Ruta a tu imagen de fondo */
+      background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
+      background-position: center; /* Centra la imagen de fondo */
+      background-attachment: fixed; /* Mantiene la imagen fija al hacer scroll */
+      background-repeat: no-repeat; /* Evita que la imagen se repita */
+      
+    }
+    .content {
+      background-image: none;
+      background-color: rgba(249, 249, 249, 0.659);
+      padding: 35px;
+    }  
+  </style>
+</Layout>

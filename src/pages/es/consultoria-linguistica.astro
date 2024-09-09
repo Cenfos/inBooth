@@ -1,0 +1,76 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Consultoría Lingüística Personalizada">
+  <main class="consultoria-linguistica-page">
+    <section class="hero">
+      <h1>Consultoría Lingüística Personalizada</h1>
+      <p>
+        Ofrecemos servicios de consultoría lingüística para ayudarte a desarrollar estrategias de comunicación efectivas, adaptadas a tus necesidades específicas.
+      </p>
+    </section>
+
+    <section class="content">
+      <div class="service-description">
+        <h2>¿Qué es la Consultoría Lingüística?</h2>
+        <p>
+          La consultoría lingüística ayuda a empresas e individuos a abordar desafíos complejos de lenguaje y comunicación. Nuestro equipo de expertos trabaja en estrecha colaboración contigo para diseñar soluciones personalizadas según tus necesidades lingüísticas.
+        </p>
+      </div>
+
+      <div class="service-areas">
+        <h2>Nuestros Servicios de Consultoría Incluyen</h2>
+        <ul>
+          <li>
+            <strong>Estrategia Lingüística:</strong> Desarrollo de estrategias de comunicación alineadas con tus objetivos.
+          </li>
+          <li>
+            <strong>Comunicación Intercultural:</strong> Mejora de las interacciones entre diversos grupos lingüísticos y culturales.
+          </li>
+          <li>
+            <strong>Redacción de Discursos:</strong> Creación de discursos y presentaciones claras, persuasivas y culturalmente apropiadas.
+          </li>
+          <li>
+            <strong>Capacitación:</strong> Ofrecemos capacitación lingüística para que tus equipos mejoren sus habilidades de comunicación.
+          </li>
+        </ul>
+      </div>
+
+      <div class="why-us">
+        <h2>¿Por Qué Elegirnos?</h2>
+        <p>
+          Nuestros consultores expertos tienen años de experiencia trabajando con empresas e individuos para crear estrategias de comunicación impactantes. Ofrecemos soluciones personalizadas que abordan los desafíos lingüísticos únicos que enfrentas.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Custom styles for the page -->
+  <style>
+    .hero {
+      background-color: #f9f9f9;
+      padding: 2rem;
+      text-align: center;
+    }
+
+   
+    /* Sobreescribir el límite de ancho del body y eliminar la imagen de fondo */
+    body {
+      max-width: 100%;
+      margin: 0;
+      padding: 0;
+      background-image: url('/images/diary.jpg'); /* Ruta a tu imagen de fondo */
+      background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
+      background-position: center; /* Centra la imagen de fondo */
+      background-attachment: fixed; /* Mantiene la imagen fija al hacer scroll */
+      background-repeat: no-repeat; /* Evita que la imagen se repita */
+      
+    }
+    .content {
+      background-image: none;
+      background-color: rgba(249, 249, 249, 0.659);
+      padding: 35px;
+    }  
+  </style>
+</Layout>

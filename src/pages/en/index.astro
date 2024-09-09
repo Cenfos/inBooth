@@ -10,12 +10,14 @@ const t = useTranslations(lang);
 
 <Layout title="Interpreters Booth">
 	<main>
+		<section class="hero">
+      <h1>Welcome to Interpreters Booth!</h1>
+      <p>
+        We offer simultaneous and consecutive interpretation services for events and conferences. Our professional interpreters are available in real-time to ensure smooth communication between languages.
+  
+      </p>
+    </section>
 		
-		<h1>Welcome to Interpreters Booth!</h1>
-		<p class="instructions">
-			We offer simultaneous and consecutive interpretation services for events and conferences. Our professional interpreters are available in real-time to ensure smooth communication between languages.
-
-		</p>
     <ul role="list" class="link-card-grid">
       {lang === 'en' ? (
         <>
@@ -74,7 +76,7 @@ const t = useTranslations(lang);
   main {
     margin: auto;
     padding: 1rem;
-    width: 800px;
+    width: 1200px;
     max-width: calc(100% - 2rem);
     color: #000000;
     font-size: 20px;
@@ -92,10 +94,11 @@ const t = useTranslations(lang);
 
   h1, h2, h3 {
     color: #c14747;
+    
   }
 
   .content {
-    max-width: 800px;
+    max-width: 1200px;
     margin: auto;
   }
 
@@ -114,4 +117,9 @@ const t = useTranslations(lang);
     padding: 0;
     list-style: none;
   }
+  .hero {
+    background-image: none;
+      background-color: rgba(249, 249, 249, 0.659);
+      padding: 35px;
+    }
 </style>

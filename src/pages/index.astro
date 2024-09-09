@@ -10,12 +10,13 @@ const t = useTranslations(lang);
 
 <Layout title="Interpreters Booth">
 	<main>
-		
-		<h1>Bienvenido a Interpreters Booth!</h1>
-		<p class="instructions">
-			Bienvenido a Interpreters Booth, tu socio de confianza para servicios de interpretación y traducción profesional. Ofrecemos soluciones lingüísticas precisas y eficientes para todas tus necesidades comunicativas.
-
-		</p>
+		<section class="hero">
+      <h1>Bienvenido a Interpreters Booth!</h1>
+      <p>
+        Interpreters Booth, tu socio de confianza para servicios de interpretación y traducción profesional. Ofrecemos soluciones lingüísticas precisas y eficientes para todas tus necesidades comunicativas.
+  
+      </p>
+    </section>
     <ul class="link-card-grid">
       {lang === 'en' ? (
         <>
@@ -66,7 +67,7 @@ const t = useTranslations(lang);
       )}
     </ul>
   </main>
- 
+  
 </Layout>
 
 <style>
@@ -114,4 +115,9 @@ const t = useTranslations(lang);
     padding: 0;
     list-style: none;
   }
+  .hero {
+    background-image: none;
+      background-color: rgba(249, 249, 249, 0.659);
+      padding: 35px;
+    }
 </style>

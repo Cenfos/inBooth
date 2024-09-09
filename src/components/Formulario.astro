@@ -23,8 +23,9 @@ const {
   requiredText
 } = Astro.props;
 ---
+<section class="content">
+  <h1>{title}</h1>
 
-<h1>{title}</h1>
 <form id="contact-form" action="http://localhost:3001/send-form" method="POST">
   <div class="form-group">
     <label for="nombre">{nameLabel} <span class="required">*</span></label>
@@ -53,13 +54,15 @@ const {
   </div>
   <button type="submit">{submitButtonText}</button>
 </form>
+</section>
+
 <style scoped>
 
 
   h1, h2, h3 {
     color: #c14747;
   }
-
+  
   .content {
     max-width: 800px;
     margin: auto;
@@ -67,6 +70,9 @@ const {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-image: none;
+    background-color: rgba(249, 249, 249, 0.659);
+    padding: 35px;
   }
 
   .form-group {
@@ -111,7 +117,7 @@ const {
     display: block;
     margin-top: 0.5rem;
     color: #666;
-  }
+  }  
 
   /* Ajustes para pantallas grandes (PC) */
   @media (min-width: 1024px) {

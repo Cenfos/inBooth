@@ -10,7 +10,7 @@ const translations = {
   es: {
     contact: {
       title: "Información de contacto",
-      email: "Correo electrónico: info@interpreterstrike.com",
+      email: "Correo electrónico: info@interpretersbooth.com",
       phone: "Teléfono: +123 456 7890",
       address: "Dirección: Interpretation Street, 123, Ciudad, País",
     },
@@ -24,7 +24,7 @@ const translations = {
   en: {
     contact: {
       title: "Contact Information",
-      email: "Email: info@interpreterstrike.com",
+      email: "Email: info@interpretersbooth.com",
       phone: "Phone: +123 456 7890",
       address: "Address: Interpretation Street, 123, City, Country",
     },
@@ -47,36 +47,53 @@ const t = translations[lang] || translations.es;
     <SkypeButton />
     <InstagramButton />
   </div>
-  
+
   <div class="footer-content">
-    <div class="contact-info">
-      <h3>{t.contact.title}</h3>
-      <p>{t.contact.email}</p>
-      <p>{t.contact.phone}</p>
-      <p>{t.contact.address}</p>
-    </div>
+    <div class="footer-columns">
+      <!-- Columna 1: Información de contacto -->
+      <div class="contact-info">
+        <h3>{t.contact.title}</h3>
+        <p>
+          <a href={`mailto:${t.contact.email}`}>{t.contact.email}</a>
+        </p>
+        <p>{t.contact.phone}</p>
+        <p>{t.contact.address}</p>
 
-    <div class="policy-links">
-      <!-- Enlaces dinámicos basados en el idioma -->
-      <a href={lang === 'en' ? '/en/PrivacyPolicy' : '/es/PoliticaPrivacidad'}>
-        {t.privacyPolicy}
-      </a>
-      |
-      <a href={lang === 'en' ? '/en/CookiesPolicy' : '/es/PoliticaCookies'}>
-        {t.cookiesPolicy}
-      </a>
-    </div>
+        <!-- Enlaces de políticas -->
+        <div class="policy-links">
+          <a href={lang === 'en' ? '/en/PrivacyPolicy' : '/es/PoliticaPrivacidad'}>
+            {t.privacyPolicy}
+          </a>
+          |
+          <a href={lang === 'en' ? '/en/CookiesPolicy' : '/es/PoliticaCookies'}>
+            {t.cookiesPolicy}
+          </a>
+        </div>
+      </div>
 
-    <p>&copy; {new Date().getFullYear()} InterpreterStrike. {t.copyright}</p>
+      <!-- Columna 2: Mapa de Google Maps embebido -->
+      <div class="map-container">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117014.83191029835!2d-0.44391180859680346!3d39.40788882479675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd604f4cf0efb06f%3A0xb4a351011f7f1d39!2sValencia!5e1!3m2!1sgl!2ses!4v1725901368262!5m2!1sgl!2ses" 
+          width="100%" 
+          height="300" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+    <p>&copy; {new Date().getFullYear()} Interpreters Booth. {t.copyright}</p>
   </div>
-  
+
   <p>Icons by <a target="_blank" href="https://icons8.com">Icons8</a></p>
 </footer>
 
 <style is:global>
   footer {
     background-color: #eeeff0;
-    padding: 10px 15px;
+    padding: 20px;
     margin-top: 20px;
     display: flex;
     flex-direction: column;
@@ -85,22 +102,47 @@ const t = translations[lang] || translations.es;
     font-size: 14px;
     color: #333;
   }
-  
 
   .footer-content {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin: 10px;
+    width: 100%;
+  }
+
+  .footer-columns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    gap: 20px;
   }
 
   .contact-info {
+    flex: 1;
     margin-bottom: 1rem;
+  }
+
+  .map-container {
+    flex: 1;
+    height: 300px;
+    margin-top: 1rem;
   }
 
   .policy-links {
     margin: 1rem 0;
+  }
+
+  .policy-links a {
+    color: #007aff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .policy-links a:hover {
+    text-decoration: underline;
   }
 
   .social-icons {
@@ -108,17 +150,14 @@ const t = translations[lang] || translations.es;
     gap: 10px;
     margin-bottom: 10px;
   }
-  .policy-links {
-    margin: 1rem 0;
-  }
 
-  .policy-links a {
-    color: #007aff; /* Azul de Apple */
-    text-decoration: none; /* Quitar subrayado */
-    font-weight: bold;
-  }
+  @media (max-width: 768px) {
+    .footer-columns {
+      flex-direction: column;
+    }
 
-  .policy-links a:hover {
-    text-decoration: underline; /* Subrayar al pasar el cursor */
+    .map-container {
+      margin-top: 20px;
+    }
   }
 </style>

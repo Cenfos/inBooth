@@ -3,7 +3,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      // Aquí puedes agregar configuraciones personalizadas
+      "*": ["src/*"]
     }
   }
 }
